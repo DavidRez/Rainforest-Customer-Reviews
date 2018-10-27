@@ -6,7 +6,8 @@
   "scripts": {
     "start": "nodemon server/index.js",
     "test": "npm test",
-    "react-dev": "webpack -d --watch"
+    "react-dev": "webpack -d --watch",
+    "seed" : "knex seed:run"
   },
   "repository": {
     "type": "git",
@@ -30,6 +31,8 @@
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
+    "knex": "^0.15.2",
+    "pg": "^7.6.0",
     "react": "^16.6.0"
   }
 }
