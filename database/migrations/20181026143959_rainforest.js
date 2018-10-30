@@ -6,7 +6,7 @@ exports.up = function(knex, Promise) {
       }),
       knex.schema.createTable('customer_review', (table) => {
         table.increments('id').primary();
-        table.string('customer_id');
+        table.integer('customer_id');
         table.string('customer_username');
         table.string('review_date');
         table.integer('rating');
