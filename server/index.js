@@ -12,32 +12,45 @@ app.listen(port, () => {
     console.log(`Listening on ${port}...`);
 });
 
+app.get('/api/reviews/:productid', (req, res) => {
+    let productid = req.params.productid;
+    console.log('getting product reviews');
+    database('customer_review').where({product_id: productid}).orderBy('helpful_count','desc').limit(10).select()
+    .then((reviews) => {
+        res.status(200).json(reviews);
+    })
+    .catch((error) => {
+        res.status(500).json({ error });
+    });
+});
+
 app.get('/api/reviews', (req, res) => {
     database('customer_review').select()
-      .then((reviews) => {
+    .then((reviews) => {
         res.status(200).json(reviews);
-      })
-      .catch((error) => {
+    })
+    .catch((error) => {
         res.status(500).json({ error });
-      });
-  });
+    });
+});
 
-  app.get('/api/images', (req, res) => {
+
+app.get('/api/images', (req, res) => {
     database('customer_review_images').select()
-      .then((images) => {
+    .then((images) => {
         res.status(200).json(images);
-      })
-      .catch((error) => {
+    })
+    .catch((error) => {
         res.status(500).json({ error });
-      });
-  });
+    });
+});
 
-  app.get('/api/products', (req, res) => {
+app.get('/api/products', (req, res) => {
     database('product_info').select()
-      .then((products) => {
+    .then((products) => {
         res.status(200).json(products);
-      })
-      .catch((error) => {
+    })
+    .catch((error) => {
         res.status(500).json({ error });
-      });
-  });
+    });
+});
