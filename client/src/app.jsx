@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import CustomerReview from './components/CustomerReview.jsx';
+import CustomerReviews from './components/CustomerReviews.jsx';
 
 class App extends React.Component {
     render() {
-        return (<div><CustomerReview productId={1} /></div>)
+        return (<div><CustomerReviews productId={1} /></div>)
     }
 }
 
