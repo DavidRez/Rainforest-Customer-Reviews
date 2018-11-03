@@ -1,7 +1,6 @@
 import React from 'react';
-import getReviews from '../api/reviews.js';
+import getReviews from '../api/getReviews.js';
 import CustomerReview from './CustomerReview.jsx';
-import 'whatwg-fetch';
 
 class CustomerReviews extends React.Component {
     constructor(props) {
