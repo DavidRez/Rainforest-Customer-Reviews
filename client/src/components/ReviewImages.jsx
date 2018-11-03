@@ -1,6 +1,5 @@
 import React from 'react';
-import getImages from '../api/images.js';
-import 'whatwg-fetch';
+import getImages from '../api/getImages.js';
 
 class ReviewImages extends React.Component {
     constructor(props) {
@@ -20,7 +19,7 @@ class ReviewImages extends React.Component {
             });
     }
 
-    render() {
+    render() {        
             if (this.state.images !== undefined) {
                 return (
                     <div id="R13QLACX1TLA48_imageSection_main" class="a-section a-spacing-medium review-image-container">
