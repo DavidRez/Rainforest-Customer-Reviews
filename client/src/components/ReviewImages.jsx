@@ -22,18 +22,17 @@ class ReviewImages extends React.Component {
     render() {        
             if (this.state.images !== undefined) {
                 return (
-                    <div id="R13QLACX1TLA48_imageSection_main" class="a-section a-spacing-medium review-image-container">
-                        <div class="review-image-tile-section " data-reviewid="R13QLACX1TLA48">
-                            {this.state.images.map((image, i) =>
+                    <div class="gallery">
+                        {this.state.images.map((image, i) =>
+                            <div class="image">
                                 <img key={i}
                                     alt="review image" 
-                                    src={image.location_url} data-hook="review-image-tile" 
-                                    class="review-image-tile" 
+                                    src={image.location_url}
                                     height="88" 
-                                    width="130" 
-                                    data-src={image.location_url} />  
-                            )}
-                        </div>
+                                    width="130" />
+                            </div>
+                            )
+                        }
                         {/* <div style="display:none;">
                             <span class="a-declarative" data-action="a-modal" data-a-modal="{&quot;name&quot;:&quot;R13QLACX1TLA48_gallerySection_main&quot;}">
                             <a href="javascript:void(0)" class="a-popover-trigger a-declarative">
