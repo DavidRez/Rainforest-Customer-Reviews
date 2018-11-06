@@ -8,14 +8,19 @@ const database = require('knex')(configuration);
 
 app.use(express.static(__dirname + '/../client/dist'));
 
+app.use((req, res, next) => {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers",
+               "Origin, X-Requested-With, Content-Type, Accept"); 
+    next();
+  });
+
 app.listen(port, () => {
     console.log(`Listening on ${port}...`);
 });
 
-app.get('/api/reviews/:productid', (req, res) => {
-    let productid = req.params.productid;
-    console.log('getting product reviews');
-    database('customer_review').where({product_id: productid}).orderBy('helpful_count','desc').limit(10).select()
+app.get('/api/reviews', (req, res) => {
+    database('customer_review').select()
     .then((reviews) => {
         res.status(200).json(reviews);
     })
@@ -24,8 +29,9 @@ app.get('/api/reviews/:productid', (req, res) => {
     });
 });
 
-app.get('/api/reviews', (req, res) => {
-    database('customer_review').select()
+app.get('/api/reviews/:productid', (req, res) => {
+    let productid = req.params.productid;
+    database('customer_review').where({product_id: productid}).orderBy('helpful_count','desc').limit(10).select()
     .then((reviews) => {
         res.status(200).json(reviews);
     })
@@ -45,6 +51,17 @@ app.get('/api/images', (req, res) => {
     });
 });
 
+app.get('/api/images/:reviewId', (req, res) => {
+    let reviewId = req.params.reviewId;
+    database('customer_review_images').where({review_id: reviewId}).select()
+    .then((images) => {
+        res.status(200).json(images);
+    })
+    .catch((error) => {
+        res.status(500).json({ error });
+    });
+});
+
 app.get('/api/products', (req, res) => {
     database('product_info').select()
     .then((products) => {
@@ -54,3 +71,5 @@ app.get('/api/products', (req, res) => {
         res.status(500).json({ error });
     });
 });
+
+module.exports = app;
