@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css?family=Khula:300,400,600,700");
+.review {
+  width: inherit;
+  display: inline-block;
+  font-family: "Khula", sans-serif;
+  font-size: 14px;
+  color: black;
+  margin-bottom: 30px;
+}
+.review .user {
+  width: inherit;
+  height: 35px;
+  display: inline-block;
+  margin-bottom: 0px;
+}
+.review .user .avatar {
+  margin-right: 10px;
+  float: left;
+}
+.review .user .avatar img {
+  height: 35px;
+  width: 35px;
+}
+.review .user .username {
+  float: left;
+  line-height: 30px;
+}
+.review .rating_title_box {
+  width: inherit;
+  height: 18px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.review .rating_title_box .stars {
+  margin-right: 5px;
+  float: left;
+}
+.review .rating_title_box .title {
+  font-weight: bold;
+  float: left;
+}
+.review .date {
+  color: grey;
+  height: 20px;
+}
+.review .version {
+  color: grey;
+}
+.review .text {
+  line-height: 18px;
+}
+.review .gallery {
+  width: inherit;
+  height: auto;
+  display: inline-block;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+.review .gallery .image {
+  width: 130px;
+  height: 90px;
+  margin-right: 5px;
+  margin-bottom: 3px;
+  float: left;
+}
+.review .bottom_box {
+  width: inherit;
+}
+.review .bottom_box .helpful {
+  color: grey;
+}
+.review .bottom_box .helpful-button {
+  width: 90px;
+  height: 25px;
+  padding: 5px;
+  margin-right: 10px;
+  float: left;
+}
+.review .bottom_box .buttons {
+  float: left;
+}
+
+/*# sourceMappingURL=custom.css.map */
