@@ -1,10 +1,12 @@
 // Update with your config settings.
+require('dotenv').config();
 
 module.exports = {
 
   development: {
     client: 'postgresql',
-    connection: 'postgres://localhost/rainforest',
+    connection: process.env.CR_URL,
+    // connection: 'postgres://localhost/rainforest',
     migrations: {
       directory: __dirname + '/database/migrations'
     },
@@ -15,11 +17,12 @@ module.exports = {
 
   staging: {
     client: 'postgresql',
-    connection: {
-      database: 'rainforest',
-      user:     'rain',
-      password: 'forest'
-    },
+    connection: process.env.CR_URL,
+    // connection: {
+    //   database: 'rainforest',
+    //   user:     'rain',
+    //   password: 'forest'
+    // },
     pool: {
       min: 2,
       max: 10
@@ -31,11 +34,12 @@ module.exports = {
 
   production: {
     client: 'postgresql',
-    connection: {
-      database: 'rainforest',
-      user:     'rain',
-      password: 'forest'
-    },
+    connection: process.env.CR_URL,
+    // {
+    //   database: 'rainforest',
+    //   user:     'rain',
+    //   password: 'forest'
+    // },
     pool: {
       min: 2,
       max: 10
