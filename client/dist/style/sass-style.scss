@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Khula:300,400,600,700');
-$font-stack: 'Khula', sans-serif;
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700');
+$font-stack: 'Roboto', sans-serif;
 $primary-color: black;
 
 .review {
@@ -84,11 +84,13 @@ $primary-color: black;
             width: 90px;
             height: 25px;
             padding: 5px;
-            margin-right: 10px;
+            margin-right: 5px;
+            margin-top: 5px;
             float: left;
         }
         .buttons {
             float: left;
+            margin-top: 5px;
         }   
     } 
 }
