@@ -1,5 +1,17 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,700");
-.review {
+#bottom {
+  width: 100%;
+}
+#bottom #ads {
+  width: 33%;
+  background-color: grey;
+  float: left;
+}
+#bottom #review_block {
+  width: 66%;
+  float: left;
+}
+#bottom #review_block .review {
   width: inherit;
   display: inline-block;
   font-family: "Roboto", sans-serif;
@@ -7,69 +19,69 @@
   color: black;
   margin-bottom: 30px;
 }
-.review .user {
+#bottom #review_block .review .user {
   width: inherit;
   height: 35px;
   display: inline-block;
   margin-bottom: 0px;
 }
-.review .user .avatar {
+#bottom #review_block .review .user .avatar {
   margin-right: 10px;
   float: left;
 }
-.review .user .avatar img {
+#bottom #review_block .review .user .avatar img {
   height: 35px;
   width: 35px;
 }
-.review .user .username {
+#bottom #review_block .review .user .username {
   float: left;
   line-height: 30px;
 }
-.review .rating_title_box {
+#bottom #review_block .review .rating_title_box {
   width: inherit;
   height: 18px;
   margin-top: 5px;
   margin-bottom: 5px;
 }
-.review .rating_title_box .stars {
+#bottom #review_block .review .rating_title_box .stars {
   margin-right: 5px;
   float: left;
 }
-.review .rating_title_box .title {
+#bottom #review_block .review .rating_title_box .title {
   font-weight: bold;
   float: left;
 }
-.review .date {
+#bottom #review_block .review .date {
   color: grey;
   height: 20px;
 }
-.review .version {
+#bottom #review_block .review .version {
   color: grey;
 }
-.review .text {
+#bottom #review_block .review .text {
   line-height: 18px;
 }
-.review .gallery {
+#bottom #review_block .review .gallery {
   width: inherit;
   height: auto;
   display: inline-block;
   margin-top: 10px;
   margin-bottom: 0;
 }
-.review .gallery .image {
+#bottom #review_block .review .gallery .image {
   width: 130px;
   height: 90px;
   margin-right: 5px;
   margin-bottom: 3px;
   float: left;
 }
-.review .bottom_box {
+#bottom #review_block .review .bottom_box {
   width: inherit;
 }
-.review .bottom_box .helpful {
+#bottom #review_block .review .bottom_box .helpful {
   color: grey;
 }
-.review .bottom_box .helpful-button {
+#bottom #review_block .review .bottom_box .helpful-button {
   width: 90px;
   height: 25px;
   padding: 5px;
@@ -77,7 +89,7 @@
   margin-top: 5px;
   float: left;
 }
-.review .bottom_box .buttons {
+#bottom #review_block .review .bottom_box .buttons {
   float: left;
   margin-top: 5px;
 }
