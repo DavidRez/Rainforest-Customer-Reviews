@@ -10,7 +10,7 @@ class CustomerReviews extends React.Component {
         };
     }
 
-    componentWillMount() {
+    componentDidMount() {
         getReviews(this.props.productId || '')
             .then(data => {
                 this.setState({ reviews : data })

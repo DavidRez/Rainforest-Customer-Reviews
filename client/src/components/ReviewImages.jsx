@@ -9,22 +9,24 @@ class ReviewImages extends React.Component {
         };
     }
 
-    componentWillMount() {
-        getImages(this.props.reviewId)
+    componentDidMount() {
+        if(this.props.reviewId !== undefined) {
+            getImages(this.props.reviewId)
             .then(data => {
                 this.setState({ images : data });
             })
             .catch(err => {
                 console.log(err);
             });
+        }
     }
 
     render() {        
-            if (this.state.images !== undefined) {
+            if (this.state.images.length !== 0 ) {
                 return (
                     <div class="gallery">
                         {this.state.images.map((image, i) =>
-                            <div class="image">
+                            <div class="image" key={i}>
                                 <img key={i}
                                     alt="review image" 
                                     src={image.location_url}
@@ -37,7 +39,7 @@ class ReviewImages extends React.Component {
                 )
             }
             else
-                return null;
+                return <span></span>
     }
 }
 
