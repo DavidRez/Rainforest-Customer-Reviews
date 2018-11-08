@@ -33,12 +33,6 @@ class ReviewImages extends React.Component {
                             </div>
                             )
                         }
-                        {/* <div style="display:none;">
-                            <span class="a-declarative" data-action="a-modal" data-a-modal="{&quot;name&quot;:&quot;R13QLACX1TLA48_gallerySection_main&quot;}">
-                            <a href="javascript:void(0)" class="a-popover-trigger a-declarative">
-                                <i class="a-icon a-icon-popover"></i>
-                            </a></span>
-                        </div> */}
                     </div>
                 )
             }
