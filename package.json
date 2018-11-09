@@ -70,6 +70,8 @@
     "pg": "^7.6.0",
     "react": "^16.6.0",
     "react-addons-test-utils": "^15.6.2",
+    "react-star-ratings": "^2.3.0",
+    "sequelize": "^4.41.1",
     "whatwg-fetch": "^3.0.0"
   }
 }
