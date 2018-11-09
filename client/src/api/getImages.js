@@ -1,5 +1,5 @@
 const getImages = (reviewId) => {
-    return fetch('/api/images/' + reviewId)
+    return fetch('/cr/images/' + reviewId)
         .then(response => {
             return response.json();
         })

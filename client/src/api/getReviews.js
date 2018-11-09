@@ -1,5 +1,5 @@
 const getReviews = (productId) => {
-    return fetch('/api/reviews/' + productId)
+    return fetch('/cr/reviews/' + productId)
         .then(response => {
             return response.json();
         })

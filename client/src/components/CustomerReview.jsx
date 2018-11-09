@@ -19,7 +19,7 @@ class CustomerReview extends React.Component {
     helpfulCount(e) {
         if (!this.state.count) {
             this.setState({count : true});
-            return fetch('/api/reviews/' + this.state.info.id, {
+            return fetch('/cr/reviews/' + this.state.info.id, {
                 method: 'PATCH'})
             .then(response => {
                 return response.json();
@@ -47,7 +47,7 @@ class CustomerReview extends React.Component {
                             numberOfStars={5}
                             name='rating'
                             starDimension="16px"
-                            starSpacing="2px"
+                            starSpacing="1px"
                         />
                     </div>
                     <div className="title">{this.state.info.title}</div>
