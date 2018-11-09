@@ -10,7 +10,7 @@ class ReviewImages extends React.Component {
     }
 
     componentDidMount() {
-        if(this.props.reviewId !== undefined) {
+        setTimeout(()=>{
             getImages(this.props.reviewId)
             .then(data => {
                 this.setState({ images : data });
@@ -18,11 +18,11 @@ class ReviewImages extends React.Component {
             .catch(err => {
                 console.log(err);
             });
-        }
+        },400);
     }
 
     render() {        
-            if (this.state.images.length !== 0 ) {
+            if (this.state.images.length > 0 ) {
                 return (
                     <div className="gallery">
                         {this.state.images.map((image, i) =>
