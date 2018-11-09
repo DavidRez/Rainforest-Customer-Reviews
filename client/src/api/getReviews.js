@@ -1,5 +1,5 @@
 const getReviews = (productId) => {
-    return fetch('http://localhost:5000/api/reviews/' + productId)
+    return fetch('/api/reviews/' + productId)
         .then(response => {
             return response.json();
         })
