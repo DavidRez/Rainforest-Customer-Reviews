@@ -24,9 +24,9 @@ class ReviewImages extends React.Component {
     render() {        
             if (this.state.images.length !== 0 ) {
                 return (
-                    <div class="gallery">
+                    <div className="gallery">
                         {this.state.images.map((image, i) =>
-                            <div class="image" key={i}>
+                            <div className="image" key={i}>
                                 <img key={i}
                                     alt="review image" 
                                     src={image.location_url}
