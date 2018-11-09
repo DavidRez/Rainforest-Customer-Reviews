@@ -3,13 +3,15 @@
   width: 100%;
 }
 #bottom #ads {
-  width: 33%;
+  width: 30%;
+  height: inherit;
   background-color: grey;
   float: left;
 }
 #bottom #review_block {
-  width: 66%;
-  float: left;
+  width: 55%;
+  padding-right: 20px;
+  float: right;
 }
 #bottom #review_block .review {
   width: inherit;
@@ -57,6 +59,8 @@
 }
 #bottom #review_block .review .version {
   color: grey;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 #bottom #review_block .review .text {
   line-height: 18px;
@@ -80,18 +84,38 @@
 }
 #bottom #review_block .review .bottom_box .helpful {
   color: grey;
+  margin-top: 15px;
+  margin-bottom: 10px;
 }
 #bottom #review_block .review .bottom_box .helpful-button {
+  font-size: 13px;
   width: 90px;
   height: 25px;
+  display: table-cell;
+  vertical-align: middle;
+  border-radius: 2px;
+  border: 1px solid #6C6C6C;
   padding: 5px;
   margin-right: 5px;
   margin-top: 5px;
   float: left;
+  background-color: #F5F5F5;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#F5F5F5), to(#EDEDED));
+  background-image: -webkit-linear-gradient(top, #F5F5F5, #EDEDED);
+  background-image: -moz-linear-gradient(top, #F5F5F5, #EDEDED);
+  background-image: -ms-linear-gradient(top, #F5F5F5, #EDEDED);
+  background-image: -o-linear-gradient(top, #F5F5F5, #EDEDED);
+  background-image: linear-gradient(to bottom, #F5F5F5, #EDEDED);
 }
 #bottom #review_block .review .bottom_box .buttons {
   float: left;
   margin-top: 5px;
+  line-height: 22px;
+  vertical-align: middle;
+}
+#bottom #review_block .review .bottom_box .buttons a:link, #bottom #review_block .review .bottom_box .buttons a:active {
+  text-decoration: none;
+  color: black;
 }
 
 /*# sourceMappingURL=reviews.css.map */
