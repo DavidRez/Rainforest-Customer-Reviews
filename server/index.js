@@ -62,7 +62,7 @@ app.get('/cr/reviews/:productid', (req, res) => {
         res.status(200).json(reviews);
     })
     .catch((error) => {
-        res.status(500).json({ error });
+        res.sendStatus(204);
     });
 });
 
@@ -74,7 +74,7 @@ app.patch('/cr/reviews/:reviewId', (req, res) => {
         res.status(200).json(reviews);
     })
     .catch((error) => {
-        res.status(500).json({ error });
+        res.sendStatus(204);
     });
 });
 
@@ -96,7 +96,7 @@ app.get('/cr/images/:reviewId', (req, res) => {
         res.status(200).json(images);
     })
     .catch((error) => {
-        res.status(500).json({ error });
+        res.sendStatus(204);
     });
 });
 
