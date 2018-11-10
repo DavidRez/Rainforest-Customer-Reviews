@@ -13,21 +13,23 @@ class CustomerReviews extends React.Component {
     componentDidMount() {
         getReviews(this.props.productId || '')
             .then(data => {
-                this.setState({ reviews : data })
+                this.setState({ reviews : data });
             })
-            .catch(err => {
-                console.log(err);
-            });
     }
 
     render() {
-        return (
-        <div>
-            {this.state.reviews.map((review, i) =>
-                <CustomerReview info={review} key={i} />    
-            )}
-        </div>
-        )
+        if(this.state.reviews.length > 0)
+        {
+            return (
+                <div>
+                    {this.state.reviews.map((review, i) =>
+                        <CustomerReview info={review} key={i} />    
+                    )}
+                </div>
+            )
+        }
+        else 
+            return <span></span>
     }
 }
 
