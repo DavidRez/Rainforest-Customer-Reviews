@@ -23,7 +23,7 @@ class CustomerReview extends React.Component {
                 method: 'PATCH'})
             .then(response => {
                 return response.json();
-            });
+            })
         }
     }
     
@@ -43,7 +43,7 @@ class CustomerReview extends React.Component {
                     <div className="stars">
                         <StarRatings
                             rating={this.state.info.rating}
-                            starRatedColor="rgb(255, 213, 79)"
+                            starRatedColor="rgb(224, 198, 41)"
                             numberOfStars={5}
                             name='rating'
                             starDimension="16px"
