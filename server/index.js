@@ -38,8 +38,8 @@ app.get('/cr/reviews/:productid', (req, res) => {
     .then((reviews) => {
         res.status(200).json(reviews);
     })
-    .catch((error) => {
-        res.sendStatus(204);
+    .catch(() => {
+        res.status(200).send([]);
     });
 });
 
@@ -50,8 +50,8 @@ app.patch('/cr/reviews/:reviewId', (req, res) => {
     .then((reviews) => {
         res.status(200).json(reviews);
     })
-    .catch((error) => {
-        res.sendStatus(204);
+    .catch(() => {
+        res.status(200).send([]);
     });
 });
 
@@ -72,8 +72,8 @@ app.get('/cr/images/:reviewId', (req, res) => {
     .then((images) => {
         res.status(200).json(images);
     })
-    .catch((error) => {
-        res.sendStatus(204);
+    .catch(() => {
+        res.status(200).send([]);
     });
 });
 
