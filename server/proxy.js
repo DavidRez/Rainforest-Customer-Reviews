@@ -1,28 +1,25 @@
 var httpProxy = require('http-proxy');
 const express = require('express');
 let app = express();
-var proxy = httpProxy.createProxyServer({});
-let customerReview = 'http://localhost:2000';
-let productView = 'http://localhost:710';
-let recommendedProducts = 'http://localhost:3001';
-let productAttribute = 'http://localhost:8000';
+var proxy = httpProxy.createProxyServer({
+});
+let customerReview = 'http://rainforest-customer-reviews.us-west-1.elasticbeanstalk.com/';
+let productView = 'http://infinite-beach-71923.herokuapp.com/';
+let recommendedProducts = 'http://infinite-beach-71923.herokuapp.com/';
+let productAttribute = 'http://productattributes-env.vvzms2trsu.us-east-2.elasticbeanstalk.com/';
+
+app.use(express.static(__dirname + '/../client/dist'));
 
 app.all("/productsdisplay", function(req, res) {
-    proxy.web(req, res, {target: productView});
+    proxy.web(req, res, {target: customerReview});
 });
 
 app.all("/products", function(req, res) {
-    proxy.web(req, res, {target: recommendedProducts});
+    proxy.web(req, res, {target: customerReview});
 });
 
 app.all("/api/productdata/product", function(req, res) {
     proxy.web(req, res, {target: productAttribute});
-});
-
-app.all('/', (req, res) => {
-    proxy.web(req, res, {
-        target: customerReview
-      })
 });
 
 app.get('/cr/reviews', (req, res) => {
