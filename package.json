@@ -8,8 +8,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "watch start": "nodemon server/index.js",
-    "watch proxy": "nodemon server/proxy.js",
+    "watch-start": "nodemon server/index.js",
+    "watch-proxy": "nodemon server/proxy.js",
     "start": "node server/index.js",
     "proxy": "node server/proxy.js",
     "test": "jest --verbose",
