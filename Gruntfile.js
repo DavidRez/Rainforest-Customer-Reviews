@@ -1,13 +1,25 @@
 module.exports = function(grunt) {
-  // Time your grunt tasks and never need to loadGruntTask again
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-express-server');
   grunt.loadNpmTasks('grunt-webpack');
   grunt.loadNpmTasks('grunt-s3');
+  grunt.loadNpmTasks('grunt-pg-db');
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+
+    pgdb: {
+      options: {
+          connection: 'postgres://localhost:5432',
+          sql: [
+              "CREATE DATABASE test",
+              "CREATE ROLE testuser WITH LOGIN PASSWORD 'test'",
+              "GRANT ALL PRIVILEGES ON DATABASE test TO testuser",
+              "ALTER ROLE test CREATEDB"
+          ]
+        }
+      },
 
     sass: {
       dist: {
@@ -103,15 +115,15 @@ module.exports = function(grunt) {
         upload: [
           {
             src: 'client/dist/bundle.js',
-            dest: 'bundle.js',
+            dest: 'bundle_cr.js',
   
             // These values will override the above settings.
             bucket: '<%= aws.bucket %>',
             access: 'authenticated-read'
           },
           {
-            src: 'client/dist/style/sass-style.scss',
-            dest: 'reviews.css',
+            src: 'client/dist/style/reviews.css',
+            dest: 'cr_style.css',
   
             // These values will override the above settings.
             bucket: '<%= aws.bucket %>',
@@ -124,20 +136,18 @@ module.exports = function(grunt) {
             // make sure this document is newer than the one on S3 and replace it
             verify: true,
             src: 'client/dist/bundle.js',
-            dest: 'bundle.js',
+            dest: 'bundle_cr.js',
           },
           {
             // make sure this document is newer than the one on S3 and replace it
             verify: true,
-            src: 'client/dist/style/sass-style.scss',
-            dest: 'reviews.css',
+            src: 'client/dist/style/reviews.css',
+            dest: 'cr_style.css',
           }
         ]
       }
-  
     }
-
   });
 
-  grunt.registerTask('default', ['sass', 'express:main','express:proxy','webpack:build','s3','watch']);
+  grunt.registerTask('default', ['sass', 'express:main','express:proxy','webpack:build','s3','pgdb','watch']);
 };
