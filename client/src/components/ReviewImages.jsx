@@ -5,11 +5,13 @@ class ReviewImages extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            //hold all info for images for current review
             images : []
         };
     }
 
     componentDidMount() {
+        // get customer review images for current review
         getImages(this.props.reviewId)
             .then(data => {
                 this.setState({ images : data });
@@ -19,6 +21,7 @@ class ReviewImages extends React.Component {
     render() {        
             if (this.state.images.length > 0) {
                 return (
+                    //create image gallery
                     <div className="gallery">
                         {this.state.images.map((image, i) =>
                             <div className="image" key={i}>
