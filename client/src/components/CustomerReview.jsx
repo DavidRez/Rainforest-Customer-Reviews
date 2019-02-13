@@ -11,11 +11,14 @@ class CustomerReview extends React.Component {
         this.helpfulCount = this.helpfulCount.bind(this);
 
         this.state = {
+            //if review 'helpful count' has been hit once
             count : false,
+            //all info for customer review
             info : {}
         };
     }
 
+    //method increases 'helpful count' of review once
     helpfulCount(e) {
         if (!this.state.count) {
             this.setState({count : true});
@@ -39,6 +42,7 @@ class CustomerReview extends React.Component {
                     <div className="avatar"><img src="https://s3-us-west-1.amazonaws.com/customer-review-images/avatar.png"></img></div>
                     <div className="username">{this.state.info.customer_username}</div>
                 </div>
+                {/* star rating */}
                 <div className="rating_title_box">
                     <div className="stars">
                         <StarRatings

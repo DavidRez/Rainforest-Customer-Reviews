@@ -6,11 +6,13 @@ class CustomerReviews extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            //hold all review info for current product
             reviews : []
         };
     }
 
     componentDidMount() {
+        //get all reviews from database for current product
         getReviews(this.props.productId || '')
             .then(data => {
                 this.setState({ reviews : data });
@@ -20,6 +22,7 @@ class CustomerReviews extends React.Component {
     render() {
         if(this.state.reviews.length > 0)
         {
+            //create each customer review
             return (
                 <div>
                     {this.state.reviews.map((review, i) =>
