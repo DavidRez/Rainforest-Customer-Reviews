@@ -9,7 +9,10 @@
   float: left;
 }
 #bottom #review_block {
-  width: 55%;
+  min-width: 700px;
+  max-width: 800px;
+  position: absolute;
+  left: 400px;
   padding-right: 20px;
   float: right;
 }
