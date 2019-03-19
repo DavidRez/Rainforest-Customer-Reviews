@@ -1,5 +1,5 @@
 # Rainforest-Customer-Reviews
-Rainforest Customer Reviews is an emulation of Amazon customer reviews for a product.
+Rainforest Customer Reviews is a customer review component of an e-commerce product page.
 
 ## Requirements
 
